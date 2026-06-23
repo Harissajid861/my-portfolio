@@ -4,6 +4,23 @@ import { assets } from '../assets/asstes' // Fixed typo: 'asstes' -> 'assets'
 
 // 1. Accept the darkMode prop here
 const Hero = ({ darkMode }) => {
+    
+    // Function to scroll to Work section
+    const scrollToWork = () => {
+        const workSection = document.getElementById('work');
+        if (workSection) {
+            workSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    // Function to scroll to Contact section
+    const scrollToContact = () => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return(
         <div id='home' className='min-h-screen flex items-center pt-16 transition-colors duration-300'>
             <div className='max-w-7xl mx-auto px-6 py-20'>
@@ -24,22 +41,28 @@ const Hero = ({ darkMode }) => {
                         </p>
                         
                         <div className='flex flex-col md:flex-row items-center gap-4 justify-center lg:justify-start'>
-                            {/* 4. Updated Primary Button */}
-                            <button className={`flex gap-2 items-center px-10 py-4 rounded-full cursor-pointer transition-all duration-300 ${
-                                darkMode 
-                                    ? 'bg-white text-black hover:bg-zinc-200' 
-                                    : 'bg-black text-slate-200 hover:text-white'
-                            }`}>
+                            {/* 4. Updated Primary Button - NOW WITH onClick */}
+                            <button 
+                                onClick={scrollToWork}
+                                className={`flex gap-2 items-center px-10 py-4 rounded-full cursor-pointer transition-all duration-300 ${
+                                    darkMode 
+                                        ? 'bg-white text-black hover:bg-zinc-200' 
+                                        : 'bg-black text-slate-200 hover:text-white'
+                                }`}
+                            >
                                 View My Work
                                 <FaArrowRight/>
                             </button>
                             
-                            {/* 5. Updated Secondary Button */}
-                            <button className={`flex items-center gap-2 border rounded-full px-10 py-4 transition-all duration-300 cursor-pointer ${
-                                darkMode 
-                                    ? 'border-zinc-500 text-zinc-300 hover:border-white hover:text-white' 
-                                    : 'border-slate-400 text-zinc-900 hover:border-slate-800'
-                            }`}>
+                            {/* 5. Updated Secondary Button - NOW WITH onClick */}
+                            <button 
+                                onClick={scrollToContact}
+                                className={`flex items-center gap-2 border rounded-full px-10 py-4 transition-all duration-300 cursor-pointer ${
+                                    darkMode 
+                                        ? 'border-zinc-500 text-zinc-300 hover:border-white hover:text-white' 
+                                        : 'border-slate-400 text-zinc-900 hover:border-slate-800'
+                                }`}
+                            >
                                 Contact Me
                                 <FaArrowRight/>
                             </button>
