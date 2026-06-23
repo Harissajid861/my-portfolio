@@ -1,16 +1,32 @@
-# React + Vite
+# 🚀 Haris Sajid - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio website built with **React** and **Vite**, featuring a sleek dark/light theme toggle, smooth scrolling navigation, and a clean professional design.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Live Demo
 
-## React Compiler
+👉 **[View Live Site](https://my-portfolio-five-ruby-83snfbp6gg.vercel.app/)** 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌓 **Dark/Light Mode Toggle** — Seamlessly switch between themes with persistent localStorage
+- 📱 **Fully Responsive** — Optimized for mobile, tablet, and desktop devices
+- 🎯 **Smooth Scrolling Navigation** — Click any menu item to glide to that section
+- 🎨 **Modern UI Design** — Clean, minimal interface built with Tailwind CSS
+- 📂 **Project Showcase** — Display your featured projects with tech stack tags
+- 📧 **Contact Form** — Ready-to-use contact section
+- ⚡ **Fast Performance** — Built with Vite for lightning-fast development and builds
+- 📥 **Resume Download** — One-click resume download button
+- 🔗 **Social Links** — WhatsApp, GitHub, and Facebook integration
+
+---
+
+## 🛠️ Tech Stack
+
+| Frontend | Styling | Tools |
+|----------|---------|-------|
+| ![React](https://img.shields.io/badge/React-18-blue?logo=react) | ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC?logo=tailwind-css) | ![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?logo=vite) |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?logo=javascript) | ![React Icons](https://img.shields.io/badge/React_Icons-✓-61DAFB?logo=react) | ![Git](https://img.shields.io/badge/Git-✓-F05032?logo=git) |
+
