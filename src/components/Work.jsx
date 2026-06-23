@@ -1,5 +1,5 @@
 import React from 'react'
-import { projectData } from '../assets/asstes' // Fixed typo: 'asstes' -> 'assets'
+import { projectData } from '../assets/asstes' 
 
 // 1. Accept the darkMode prop
 const Work = ({ darkMode }) => {
@@ -18,7 +18,7 @@ const Work = ({ darkMode }) => {
                     </p>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-4 gap-6 mb-12'>
+                <div className='grid grid-cols-1 md:grid-cols-4 gap-6 mb-8'>
                     {
                         projectData.map((project, index) =>(
                             <div 
@@ -33,7 +33,7 @@ const Work = ({ darkMode }) => {
                                 <div className='relative flex items-center justify-center bg-gray-100 dark:bg-gray-700'>
                                     <img className='w-full h-48 object-cover group-hover:opacity-100 transition-opacity duration-300' src={project.image} alt={project.title}/>
                                 </div>
-                                <div className='p-6'>
+                                <div className='p-6 pb-8'>
                                     {/* 5. Updated card title color */}
                                     <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                                         {project.title}

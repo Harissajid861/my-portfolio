@@ -46,6 +46,7 @@ const About = ({ darkMode }) => {
                         </div>
                         <a
                             href="/haris.pdf"
+                            download="Haris_Sajid_Resume.pdf"
                             download
                             className="inline-block px-8 py-4 bg-teal-600 text-white rounded-full cursor-pointer transition duration-300 hover:bg-teal-700"
                         >

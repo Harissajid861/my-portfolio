@@ -85,15 +85,19 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               {darkMode ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
             </button>
 
-            {/* Resume Button */}
-            <button className={`px-10 py-4 border rounded-full flex items-center gap-2 cursor-pointer transition-all duration-300 hover:translate-y-1 ${
-              darkMode 
-                ? 'border-gray-600 text-gray-300 hover:text-white' 
-                : 'border-zinc-800 text-slate-500 hover:text-slate-800'
-            }`}>
+            {/* Resume Button - NOW FUNCTIONAL */}
+            <a
+              href="/haris.pdf"
+              download="Haris_Sajid_Resume.pdf"
+              className={`px-10 py-4 border rounded-full flex items-center gap-2 cursor-pointer transition-all duration-300 hover:translate-y-1 ${
+                darkMode 
+                  ? 'border-gray-600 text-gray-300 hover:text-white hover:border-gray-500' 
+                  : 'border-zinc-800 text-slate-500 hover:text-slate-800 hover:border-zinc-900'
+              }`}
+            >
               Resume
               <FaArrowRight className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`} />
-            </button>
+            </a>
           </div>
         </div>
       </div>
