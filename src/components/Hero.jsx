@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
-import { assets } from '../assets/asstes' // Fixed typo: 'asstes' -> 'assets'
+import { assets } from '../assets/asstes'
 
-// 1. Accept the darkMode prop here
 const Hero = ({ darkMode }) => {
     
+    // State for the animated text
+    const fullText = "I craft immersive web experience at the intersection of design and technology.";
+    const [displayedText, setDisplayedText] = useState("");
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Smooth typing animation effect (character by character)
+    useEffect(() => {
+        if (currentIndex < fullText.length) {
+            const timer = setTimeout(() => {
+                setDisplayedText((prev) => prev + fullText[currentIndex]);
+                setCurrentIndex(currentIndex + 1);
+            }, 80); // Speed: 80ms per character (smooth and slow)
+            
+            return () => clearTimeout(timer);
+        }
+    }, [currentIndex, fullText]);
+
     // Function to scroll to Work section
     const scrollToWork = () => {
         const workSection = document.getElementById('work');
@@ -27,21 +43,22 @@ const Hero = ({ darkMode }) => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
                     <div className='text-center lg:text-left'>
                         <h1 className='text-5xl sm:text-6xl md:text-7xl font-bold mb-10'>
-                            {/* 2. Updated heading colors for dark mode */}
                             <span className={darkMode ? 'text-zinc-400' : 'text-zinc-700'}>React Developer</span>
                             <br />
                             <span className={darkMode ? 'text-cyan-500' : 'text-cyan-700'}>Javascript</span>
                         </h1>
                         
-                        {/* 3. Fixed paragraph color (zinc-900 was too dark for dark mode) */}
-                        <p className={`text-xl mb-6 transition-colors duration-300 ${
+                        {/* Animated Paragraph with Cursor */}
+                        <p className={`text-xl mb-6 transition-colors duration-300 min-h-[60px] ${
                             darkMode ? 'text-zinc-300' : 'text-zinc-900'
                         }`}>
-                            I craft immersive web experience at the intersection of design and technology.
+                            {displayedText}
+                            {currentIndex < fullText.length && (
+                                <span className='inline-block w-0.5 h-5 bg-teal-600 ml-1 animate-pulse'></span>
+                            )}
                         </p>
                         
                         <div className='flex flex-col md:flex-row items-center gap-4 justify-center lg:justify-start'>
-                            {/* 4. Updated Primary Button - NOW WITH onClick */}
                             <button 
                                 onClick={scrollToWork}
                                 className={`flex gap-2 items-center px-10 py-4 rounded-full cursor-pointer transition-all duration-300 ${
@@ -54,7 +71,6 @@ const Hero = ({ darkMode }) => {
                                 <FaArrowRight/>
                             </button>
                             
-                            {/* 5. Updated Secondary Button - NOW WITH onClick */}
                             <button 
                                 onClick={scrollToContact}
                                 className={`flex items-center gap-2 border rounded-full px-10 py-4 transition-all duration-300 cursor-pointer ${
